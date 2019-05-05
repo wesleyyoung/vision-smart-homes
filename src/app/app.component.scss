@@ -1,0 +1,23 @@
+.nav-bar {
+    position: fixed;
+    z-index: 500 !important;
+    top: 0 !important;
+    transition: all 1s linear;
+}
+
+.solid-nav-bar {
+    background-color: rgb(20, 20, 20);
+}
+
+.trans-nav-bar {
+    background-color: transparent !important;
+}
+
+.nav-bar > button {
+    font-family: Roboto-Regular;
+}
+
+.footer {
+    height: 300px;
+    background-color: rgb(10, 10, 10);
+}

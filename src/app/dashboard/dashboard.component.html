@@ -1,0 +1,49 @@
+<div class="banner">
+    <div class="banner-box">
+        <h1>
+            Smart Home
+            <span class="highlight cookie"> & </span>
+            Audio
+            <span class="highlight">
+                Specialists
+            </span>
+        </h1>
+        <button mat-raised-button class="ctl-btn-1">Get Control Of Your Home</button>
+    </div>
+</div>
+<div class="container">
+    <div class="content">
+        <h1 class="soft-txt roboto-thin subject-header">The <span class="highlight">Best</span> Of Home Automation</h1>
+        <app-brand-box *ngFor="let brand of automationBrands; let i = index" [brand]="brand" [i]="i"></app-brand-box>
+    </div>
+</div>
+<div class="container light-bg">
+    <div class="content">
+        <img src="../../assets/vision-logo-full.png" style="max-width: 75%">
+        <h3 class="soft-txt roboto-thin">435-674-9290</h3>
+        <h3 class="soft-txt roboto-thin">2051 E. Red Hills Pkwy, Suite 5 St. George, UT 84770</h3>
+        <button mat-raised-button class="ctl-btn-2">Book An Appointment</button>
+    </div>
+</div>
+<div class="container">
+    <div class="content">
+        <app-service-tile [serviceList]="ourServices1"></app-service-tile>
+        <h1 class="soft-txt roboto-thin subject-header">Your Lifestyle, Smarter</h1>
+        <div class="dash" style="margin-bottom: 50px;"></div>
+        <app-service-tile [serviceList]="ourServices2"></app-service-tile>
+    </div>
+    
+    <div class="content-strip">
+        <ul class="mdc-image-list mdc-image-list--masonry" [class.our-work-list-lg]="windowWidth > 800" [class.our-work-list-sm]="windowWidth <= 800" >
+            <li class="mdc-image-list__item" *ngFor="let pic of visiblePortfolioPics; let i = index">
+                <img class="mdc-image-list__image" [src]="pic.src">
+            </li>
+        </ul>
+        <div style="margin-top: 25px;">
+            <button mat-raised-button class="link-to-btn">
+                View Full Gallery
+            </button>
+        </div>
+
+    </div>
+</div>

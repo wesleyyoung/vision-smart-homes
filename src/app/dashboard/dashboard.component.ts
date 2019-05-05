@@ -1,0 +1,188 @@
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatIconRegistry } from '@angular/material';
+import { DOCUMENT } from '@angular/common';
+import { Brand } from '../brand-box/brand-box.component';
+import { Service } from '../service-tile/service-tile.component';
+import { TVIEW } from '@angular/core/src/render3/interfaces/view';
+import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
+
+export interface PortfolioPic {
+  src: string;
+}
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
+})
+export class DashboardComponent implements OnInit {
+
+  public visiblePics: number = 12;
+  public windowWidth: number;
+
+  constructor(
+    @Inject(DOCUMENT) private document: any,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer
+    ) { 
+      iconRegistry.addSvgIcon('tv', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/tv.svg'));
+      iconRegistry.addSvgIcon('speaker', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/speaker.svg'));
+      iconRegistry.addSvgIcon('wifi', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/wifi.svg'));
+      iconRegistry.addSvgIcon('lock', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/lock.svg'));
+      iconRegistry.addSvgIcon('web_asset', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/web_asset.svg'));
+      iconRegistry.addSvgIcon('4k', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/4k.svg'));
+      iconRegistry.addSvgIcon('phone', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/phone.svg'));
+      iconRegistry.addSvgIcon('pin', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/pin.svg'));
+    }
+
+  @HostListener('window:resize', ['$event']) onresize(ev) {
+    this.windowWidth = ev.target.innerWidth;
+  }
+
+  public automationBrands: Array<Brand> = [{
+      name: 'Crestron Electronics™',
+      subname: 'Certified Integrated Partner',
+      website: 'https://crestron.com',
+      info: 'Control Systems for Home Automation, Campus & Building Control by Crestron Electronics',
+      logo: '../../assets/crestron-logo-png-transparent.png'
+    }, {
+      name: 'Control 4™',
+      subname: 'Professional Installers And Programmers',
+      website: 'https://control4.com',
+      info: 'The Magic Of A Truly Smart Home',
+      logo: '../../assets/control-4-logo.png'
+    }
+  ]
+
+  public avBrands: Array<Brand> = [{
+    name: 'Golden Ear Technology™',
+    subname: 'Speakers and Subwoofers',
+    website: 'https://www.goldenear.com',
+    info: '',
+    logo: '../../assets/golden-ear-logo-white.png'
+  }, {
+    name: 'Sony™ Electronics',
+    subname: '4K Televisions and Projectors',
+    website: 'https://sony.com',
+    info: '',
+    logo: '../../assets/sony_logo.png'
+  }];
+
+  public ourServices1: Array<Service> = [{
+    headline: 'TV',
+    tagline: 'No cables. No clutter. Just entertainment',
+    icon: 'tv'
+  }, {
+    headline: 'Wi-Fi',
+    tagline: 'Business class wireless networks',
+    icon: 'wifi'
+  }, {
+    headline: 'Whole Home Audio',
+    tagline: 'Hand-written apologies for your neighbors',
+    icon: 'speaker'
+  }];
+
+  public ourServices2: Array<Service> = [{
+    headline: 'Security',
+    tagline: 'Cameras, doorlocks, and automated alarm systems',
+    icon: 'lock'
+  }, {
+    headline: 'Shades',
+    tagline: 'Motorized shade systems for any home',
+    icon: 'web_asset'
+  }, {
+    headline: 'Video Distribution',
+    tagline: '4K video from anywhere in your home',
+    icon: '4k'
+  }];
+
+  public portfolioPics: Array<PortfolioPic> = [{
+      src: '../../assets/portfolio-img/portfolio-1.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-2.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-5.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-6.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-7.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-8.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-9.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-10.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-12.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-13.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-14.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-15.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-16.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-17.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-18.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-19.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-20.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-21.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-22.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-23.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-24.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-25.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-26.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-27.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-28.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-29.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-30.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-31.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-32.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-33.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-34.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-35.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-36.jpg'
+    },{
+      src: '../../assets/portfolio-img/portfolio-37.jpg'
+    }
+  ];
+
+  public visiblePortfolioPics: Array<PortfolioPic> = [];
+
+  public openPage(url: string): void {
+    this.document.location.href = url;
+  }
+
+  public isEven(n) {
+    return n % 2 == 0;
+  }
+
+  ngOnInit() {
+    this.windowWidth = window.innerWidth;
+    for (var i = 0; i < this.visiblePics; i++) {
+      this.visiblePortfolioPics.push(this.portfolioPics[i]);
+    }
+  }
+
+}

@@ -1,0 +1,121 @@
+@import '~@material/image-list/mdc-image-list.scss';
+
+.banner {
+    width: 100%;
+    height: 90vh;
+    background-image: url(../../assets/OakCinemaRoomSlider.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+.banner-box {
+    background-color: rgba(15, 15, 15, .9);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-box > h1 {
+    color: rgb(200, 200, 200);
+    font-family: Roboto-Thin;
+    padding-top: 40vh;
+    text-align: center;
+    font-size: 48px;
+    margin: 0 0 24px 0 !important;
+}
+
+.banner-box > img {
+    position: absolute;
+    bottom: 0;
+}
+
+.ctl-btn-1 {
+    width: 100%;
+    max-width: 250px;
+    height: 60px;
+    font-size: 18px !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+    background-color: #8B0000;
+}
+
+.ctl-btn-2 {
+    width: 100%;
+    max-width: 250px;
+    height: 60px;
+    font-size: 18px !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+    color: #8B0000;
+    background-color: transparent;
+    border: 2px solid #8B0000;
+    transition: all 1s;
+}
+
+.ctl-btn-2:hover {
+    color: rgb(200, 200, 200);
+    background-color: #8B0000;
+    border: 2px solid transparent !important;
+}
+
+.link-to-btn {
+    width: 100%; 
+    max-width: 750px; 
+    height: 45px;
+    color: rgb(200, 200, 200);
+    background-color: #8B0000;
+}
+
+.roboto-thin {
+    font-family: Roboto-Thin;
+}
+
+.roboto-med {
+    font-family: Roboto-Medium;
+}
+
+.roboto-reg {
+    font-family: Roboto-Regular;
+}
+
+.highlight {
+    /*color: #ff3200;*/
+    color: #8B0000;
+}
+
+.soft-txt {
+    color: rgb(200, 200, 200);
+}
+
+.subject-header {
+    font-size: 48px;
+    
+}
+
+.light-bg {
+    background-image: url(../../assets/light.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+}
+
+.rock-salt {
+    font-family: Rock-Salt;
+}
+
+.concert {
+    background-image: url('../../assets/concert.jpg');
+    background-size: cover;
+}
+
+.our-work-list-lg {
+    @include mdc-image-list-masonry-columns(3, 3px);
+}
+
+.our-work-list-sm {
+    @include mdc-image-list-masonry-columns(2, 1px);
+}

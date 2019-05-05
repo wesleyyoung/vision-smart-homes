@@ -1,0 +1,10 @@
+<mat-grid-list cols="6" rowHeight="120px" gutterSize="5px">
+  <mat-grid-tile [colspan]="colSpan" rowspan="2" *ngFor="let service of serviceList">
+    <div class="service-box">
+      <mat-icon class="big-icon">{{service.icon}}</mat-icon>
+      <h3 class="headline-txt">{{service.headline}}</h3>
+      <div class="dash"></div>
+      <h4 class="tagline-txt">{{service.tagline}}</h4>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

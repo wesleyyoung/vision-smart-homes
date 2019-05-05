@@ -1,0 +1,179 @@
+
+@import '~@angular/material/theming';
+@include mat-core();
+/*#ff3200*/
+$vision-red: (
+  50: rgb(240, 20, 5),
+  100: rgb(240, 20, 5),
+  200: rgb(240, 20, 5),
+  300: #FF3200,
+  400: #FF3200,
+  500: #FF3200,
+  600: #FF3200,
+  700: rgb(255, 50, 0),
+  800: rgb(255, 50, 0),
+  900: rgb(255, 50, 0),
+  A100: rgb(255, 55, 55),
+  A200: rgb(255, 55, 55),
+  A400: rgb(255, 55, 55),
+  A700: rgb(255, 55, 55),
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+$soft-grey: (
+    50: rgb(25, 25, 25),
+    100: rgb(25, 25, 25),
+    200: rgb(25, 25, 25),
+    300: rgb(30, 30, 30),
+    400: rgb(30, 30, 30),
+    500: rgb(30, 30, 30),
+    600: rgb(35, 35, 35),
+    700: rgb(35, 35, 35),
+    800: rgb(35, 35, 35),
+    900: rgb(35, 35, 35),
+    A100: rgb(40, 40, 40),
+    A200: rgb(40, 40, 40),
+    A400: rgb(40, 40, 40),
+    A700: rgb(40, 45, 45),
+    contrast: (
+      50: white,
+      100: white,
+      200: white,
+      300: white,
+      400: white,
+      500: white,
+      600: white,
+      700: white,
+      800: white,
+      900: white,
+      A100: white,
+      A200: white,
+      A400: white,
+      A700: white,
+    )
+  );
+
+$vision-smart-homes-primary: mat-palette($soft-grey);
+$vision-smart-homes-accent: mat-palette($mat-blue-grey);
+$vision-smart-homes-warn: mat-palette($vision-red);
+$vision-smart-homes-theme: mat-dark-theme($vision-smart-homes-primary, $vision-smart-homes-accent, $vision-smart-homes-warn);
+
+@include angular-material-theme($vision-smart-homes-theme);
+
+.mat-card-header-text {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.mat-card-actions {
+  width: 100%;
+  margin: 0 !important;
+  left: 0 !important;
+}
+
+html, body { 
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+background-color: rgb(30, 30, 30);
+outline: 1px solid rgb(25, 25, 25);
+}
+
+.content {
+  width: 100%;
+  align-self: center;
+  max-width: 1500px;
+  padding-top: 100px;
+  display: inline-block;
+  text-align: auto;
+}
+
+.content-strip {
+  width: 100%;
+  align-self: center;
+  max-width: 1500px;
+  padding: 50px 0 50px 0;
+  display: inline-block;
+  text-align: auto;
+}
+
+.container {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  
+  width: 100%;
+  display: inline-block;
+}
+
+.brand-card {
+  text-align: left;
+  display: inline-block;
+  background: transparent;
+  width: 100%;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.right-brand-card {
+  text-align: right;
+  display: inline-block;
+  background: transparent;
+  width: 100%;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.brand-card > .mat-card-image {
+  max-height: 250px !important;
+}
+
+.nav-grid-tile {
+  background-color: transparent;
+}
+
+.tile-img {
+  margin-top: -16px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  width: 100%;
+  margin: 0 -16px 16px -16px;
+}
+
+.cookie {
+  font-family: Cookie !important;
+}
+
+.dash {
+  border-bottom: 2px solid #8B0000; 
+  margin: 0 35% 0 35%; 
+  height: 2px;
+}
