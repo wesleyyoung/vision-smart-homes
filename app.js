@@ -11,6 +11,7 @@
     app.use(bodyParser.json());
 
     app.use('/', express.static(__dirname + '/dist/vision-smart-homes'));
+    app.use('/home', express.static(__dirname + '/dist/vision-smart-homes'));
     app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
     app.set('PORT', process.env.PORT || 80);
