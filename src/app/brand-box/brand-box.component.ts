@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit, Inject, Input, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 export interface Brand {
@@ -7,6 +7,7 @@ export interface Brand {
   info: string;
   website: string;
   logo: string;
+  logo_sm: string;
 }
 
 @Component({
@@ -17,7 +18,13 @@ export interface Brand {
 })
 export class BrandBoxComponent implements OnInit {
 
+  public isMobile: boolean;
+
   constructor(@Inject(DOCUMENT) private document: any) { }
+
+  @HostListener('window:resize', ['$event']) onresize(ev) {
+    this.isMobile = ev.target.innerWidth <= 750;
+  }
 
   @Input() brand: Brand;
   @Input() i: number;
@@ -30,6 +37,7 @@ export class BrandBoxComponent implements OnInit {
     this.document.location.href = url;
   }
   ngOnInit() {
+    this.isMobile = window.innerWidth <= 750;
   }
 
 }

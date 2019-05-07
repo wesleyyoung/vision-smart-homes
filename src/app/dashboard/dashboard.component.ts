@@ -45,29 +45,17 @@ export class DashboardComponent implements OnInit {
       subname: 'Certified Integrated Partner',
       website: 'https://crestron.com',
       info: 'Control Systems for Home Automation, Campus & Building Control by Crestron Electronics',
-      logo: '../../assets/crestron-logo-png-transparent.png'
+      logo: '../../assets/crestron-logo-png-transparent.png',
+      logo_sm: '../../assets/crestron-logo-png-transparent-sm.png'
     }, {
       name: 'Control 4™',
       subname: 'Professional Installers And Programmers',
       website: 'https://control4.com',
       info: 'The Magic Of A Truly Smart Home',
-      logo: '../../assets/control-4-logo.png'
+      logo: '../../assets/control-4-logo.png',
+      logo_sm: '../../assets/control-4-logo-sm.png'
     }
-  ]
-
-  public avBrands: Array<Brand> = [{
-    name: 'Golden Ear Technology™',
-    subname: 'Speakers and Subwoofers',
-    website: 'https://www.goldenear.com',
-    info: '',
-    logo: '../../assets/golden-ear-logo-white.png'
-  }, {
-    name: 'Sony™ Electronics',
-    subname: '4K Televisions and Projectors',
-    website: 'https://sony.com',
-    info: '',
-    logo: '../../assets/sony_logo.png'
-  }];
+  ];
 
   public ourServices1: Array<Service> = [{
     headline: 'TV',
