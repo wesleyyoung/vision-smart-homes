@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner" [class.banner-sm]="windowWidth <= 750" [class.banner-lg]="windowWidth > 750">
     <div class="banner-box">
         <h1>
             Smart Home
