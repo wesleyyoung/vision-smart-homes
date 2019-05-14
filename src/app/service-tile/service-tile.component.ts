@@ -16,7 +16,6 @@ import {
   animate,
   transition
 } from '@angular/animations';
-import { MatGridList } from '@angular/material';
 
 export interface Service {
   headline: string;

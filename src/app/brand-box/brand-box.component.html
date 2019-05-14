@@ -1,5 +1,6 @@
-<mat-grid-list cols="6" rowHeight="100px" gutterSize="25px">
-  <mat-grid-tile class="nav-grid-tile" *ngIf="!isEven(i)" colspan="3" rowspan="2">
+<mat-grid-list cols="6" rowHeight="100px" gutterSize="25px" #brandBoxContainer>
+  <mat-grid-tile class="nav-grid-tile" *ngIf="!isEven(i)" colspan="3" rowspan="2"
+  [@flyIn]="isInViewport ? 'on-page' : 'rest-left'">
     <mat-card class="right-brand-card">
       <mat-card-header>
         <mat-card-title>{{brand.name}}</mat-card-title>
@@ -10,7 +11,8 @@
   <mat-grid-tile class="nav-grid-tile" colspan="3" rowspan="2" (click)="openPage(brand.website)">
     <img class="tile-img" [src]="!isMobile ? brand.logo : brand.logo_sm">
   </mat-grid-tile>
-  <mat-grid-tile class="nav-grid-tile" *ngIf="isEven(i)" colspan="3" rowspan="2">
+  <mat-grid-tile class="nav-grid-tile" *ngIf="isEven(i)" colspan="3" rowspan="2" 
+  [@flyIn]="isInViewport ? 'on-page' : 'rest-right'">
     <mat-card class="brand-card">
       <mat-card-header>
         <mat-card-title>{{brand.name}}</mat-card-title>
