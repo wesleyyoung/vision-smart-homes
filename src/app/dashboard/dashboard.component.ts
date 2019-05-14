@@ -1,11 +1,22 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatIconRegistry } from '@angular/material';
 import { DOCUMENT } from '@angular/common';
+import { DomSanitizer } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+  MatIconRegistry 
+} from '@angular/material';
 import { Brand } from '../brand-box/brand-box.component';
 import { Service } from '../service-tile/service-tile.component';
-import { TVIEW } from '@angular/core/src/render3/interfaces/view';
-import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
 
 export interface PortfolioPic {
   src: string;
@@ -77,7 +88,7 @@ export class DashboardComponent implements OnInit {
     icon: 'lock'
   }, {
     headline: 'Shades',
-    tagline: 'Motorized shade systems for any home',
+    tagline: 'Bring your home to life with the touch of a button',
     icon: 'web_asset'
   }, {
     headline: 'Video Distribution',
