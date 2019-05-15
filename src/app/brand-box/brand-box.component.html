@@ -1,4 +1,4 @@
-<mat-grid-list cols="6" rowHeight="100px" gutterSize="25px" #brandBoxContainer>
+<mat-grid-list cols="6" rowHeight="100px" gutterSize="25px" #brandBoxContainer style="overflow-x: visible">
   <mat-grid-tile class="nav-grid-tile" *ngIf="!isEven(i)" colspan="3" rowspan="2"
   [@flyIn]="isInViewport ? 'on-page' : 'rest-left'">
     <mat-card class="right-brand-card">

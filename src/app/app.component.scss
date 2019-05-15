@@ -1,5 +1,7 @@
 .nav-bar {
     position: fixed;
+    width: 100%;
+    max-width: 100%;
     z-index: 500 !important;
     top: 0 !important;
     transition: all 1s linear;

@@ -50,7 +50,7 @@ export interface Service {
         opacity: 0
       })),
       transition('* => *', [
-        animate('0.75s ease')
+        animate('0.55s ease')
       ])
     ])
   ]
@@ -79,7 +79,7 @@ export class ServiceTileComponent implements OnInit {
   @HostListener('window:scroll', []) onscroll() {
     let offset = this.boxes._element.nativeElement.offsetTop;
     let height = this.boxes._element.nativeElement.clientHeight
-    this.isInViewport = (window.scrollY + window.innerHeight) > offset && window.scrollY - height <= offset;
+    this.isInViewport = (window.scrollY + window.innerHeight) > (offset + 100) && window.scrollY - height <= offset;
   }
 
   @Input() serviceList: Array<Service>;

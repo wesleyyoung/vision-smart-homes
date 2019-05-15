@@ -31,6 +31,8 @@ export class DashboardComponent implements OnInit {
 
   public visiblePics: number = 12;
   public windowWidth: number;
+  public isMobile: boolean;
+  public mobileTrigger: number = 750;
 
   constructor(
     @Inject(DOCUMENT) private document: any,
@@ -49,6 +51,7 @@ export class DashboardComponent implements OnInit {
 
   @HostListener('window:resize', ['$event']) onresize(ev) {
     this.windowWidth = ev.target.innerWidth;
+    this.isMobile = this.windowWidth <= this.mobileTrigger;
   }
 
   public automationBrands: Array<Brand> = [{
@@ -179,6 +182,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.windowWidth = window.innerWidth;
+    this.isMobile = this.windowWidth <= this.mobileTrigger;
     for (var i = 0; i < this.visiblePics; i++) {
       this.visiblePortfolioPics.push(this.portfolioPics[i]);
     }

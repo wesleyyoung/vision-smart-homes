@@ -1,4 +1,4 @@
-<div class="banner" [class.banner-sm]="windowWidth <= 750" [class.banner-lg]="windowWidth > 750">
+<div class="banner" [class.banner-sm]="isMobile" [class.banner-lg]="!isMobile" [class.parallax]="!isMobile">
     <div class="banner-box">
         <h1>
             Smart Home
@@ -17,7 +17,7 @@
         <app-brand-box *ngFor="let brand of automationBrands; let i = index" [brand]="brand" [i]="i"></app-brand-box>
     </div>
 </div>
-<div class="container light-bg">
+<div class="container light-bg" [class.parallax]="!isMobile">
     <div class="content">
         <img src="../../assets/vision-logo-full.png" style="max-width: 75%">
         <h3 class="soft-txt roboto-thin">435-674-9290</h3>
