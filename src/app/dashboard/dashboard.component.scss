@@ -26,10 +26,17 @@
 .banner-box > h1 {
     color: rgb(200, 200, 200);
     font-family: Roboto-Thin;
-    padding-top: 40vh;
+    padding: 40vh 15px 0 15px;
     text-align: center;
-    font-size: 48px;
     margin: 0 0 24px 0 !important;
+}
+
+.lg-txt {
+    font-size: 48px;
+}
+
+.sm-txt {
+    font-size: 40px;
 }
 
 .banner-box > img {
@@ -40,11 +47,20 @@
 .ctl-btn-1 {
     width: 100%;
     max-width: 250px;
-    height: 60px;
-    font-size: 18px !important;
     border-radius: 50px !important;
     box-shadow: none !important;
     background-color: #8B0000;
+    transition: all .3s ease;
+}
+
+.ctl-btn-1-sm {
+    height: 45px;
+    font-size: 14px !important;
+}
+
+.ctl-btn-1-lg {
+    height: 60px;
+    font-size: 18px !important;
 }
 
 .ctl-btn-2 {

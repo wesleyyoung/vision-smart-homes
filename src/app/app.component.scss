@@ -1,9 +1,10 @@
 .nav-bar {
-    position: fixed;
-    max-width: 100vw !important;
+    position: fixed !important;
+    width: 100vw !important;
     z-index: 500 !important;
+    height: 64px !important;
     top: 0 !important;
-    transition: all 1s linear;
+    transition: background-color 1s linear;
 }
 
 .solid-nav-bar {

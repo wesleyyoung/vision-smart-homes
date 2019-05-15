@@ -1,6 +1,6 @@
 <div class="banner" [class.banner-sm]="isMobile" [class.banner-lg]="!isMobile" [class.parallax]="!isMobile">
     <div class="banner-box">
-        <h1>
+        <h1 [class.lg-txt]="!isMobile" [class.sm-txt]="isMobile">
             Smart Home
             <span class="highlight cookie"> & </span>
             Audio
@@ -8,7 +8,7 @@
                 Specialists
             </span>
         </h1>
-        <button mat-raised-button class="ctl-btn-1">Get Control Of Your Home</button>
+        <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile">Get Control Of Your Home</button>
     </div>
 </div>
 <div class="container">
