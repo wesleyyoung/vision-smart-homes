@@ -14,6 +14,7 @@ import {
   state,
   style,
   animate,
+  animateChild,
   transition
 } from '@angular/animations';
 
@@ -79,7 +80,7 @@ export class ServiceTileComponent implements OnInit {
   @HostListener('window:scroll', []) onscroll() {
     let offset = this.boxes._element.nativeElement.offsetTop;
     let height = this.boxes._element.nativeElement.clientHeight
-    this.isInViewport = (window.scrollY + window.innerHeight) > (offset + 100) && window.scrollY - height <= offset;
+    this.isInViewport = (window.scrollY + window.innerHeight) > (offset + (window.innerHeight * .15))  && window.scrollY - height <= offset;
   }
 
   @Input() serviceList: Array<Service>;

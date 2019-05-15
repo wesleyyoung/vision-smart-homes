@@ -67,7 +67,7 @@ export class BrandBoxComponent implements OnInit {
   @HostListener('window:scroll', []) onscroll() {
     let offset = this.box._element.nativeElement.offsetTop;
     let height = this.box._element.nativeElement.clientHeight
-    this.isInViewport = (window.scrollY + window.innerHeight) > (offset + 100) && window.scrollY - height <= offset;
+    this.isInViewport = (window.scrollY + window.innerHeight) > (offset + (window.innerHeight * .15)) && window.scrollY - height <= offset;
   }
 
   @Input() brand: Brand;
