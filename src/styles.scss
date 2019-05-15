@@ -120,7 +120,7 @@ outline: 1px solid rgb(25, 25, 25);
   padding-top: 100px;
   display: inline-block;
   text-align: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .content-strip {
@@ -130,7 +130,7 @@ outline: 1px solid rgb(25, 25, 25);
   padding: 50px 0 50px 0;
   display: inline-block;
   text-align: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .container {
@@ -148,7 +148,7 @@ outline: 1px solid rgb(25, 25, 25);
   background: transparent;
   width: 100%;
   box-shadow: none !important;
-  padding: 0 15px 0 15px;
+  padding: 0 10px 0 10px;
 }
 
 .right-brand-card {
@@ -157,7 +157,7 @@ outline: 1px solid rgb(25, 25, 25);
   background: transparent;
   width: 100%;
   box-shadow: none !important;
-  padding: 0 15px 0 15px;
+  padding: 0 10px 0 10px;
 }
 
 .brand-card > .mat-card-image {

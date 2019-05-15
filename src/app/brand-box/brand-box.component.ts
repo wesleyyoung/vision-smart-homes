@@ -46,7 +46,7 @@ export interface Brand {
         opacity: 0
       })),
       transition('* => *', [
-        animate('1.5s ease')
+        animate('1.1s ease')
       ])
     ])
   ]
