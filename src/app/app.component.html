@@ -1,10 +1,13 @@
-<mat-toolbar class="nav-bar" role="toolbar" *ngIf="showNav" [class.solid-nav-bar]="!atTop" [class.trans-nav-bar]="atTop">
+<mat-toolbar class="nav-bar" role="toolbar" *ngIf="showNav" [class.solid-nav-bar]="!atTop" [class.transparent]="atTop">
   <img src="../assets/vision-logo-e.png" style="height: 50px; width: 50px">
   <span style="flex: 1 1 auto;"></span>
   <button mat-button *ngIf="!isMobile">Products</button>
   <button mat-button *ngIf="!isMobile">Services</button>
   <button mat-button *ngIf="!isMobile">About</button>
   <button mat-button *ngIf="!isMobile">Contact</button>
+  <button mat-fab color=primary *ngIf="isMobile">
+    <mat-icon aria-label="Menu">menu</mat-icon>
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
 <div class="footer">

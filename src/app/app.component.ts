@@ -34,11 +34,9 @@ export class AppComponent implements OnInit{
   }
 
   @HostListener('window:scroll', ['$event']) onscroll(ev) {
-    this.showNav = (window.scrollY < this.previousHeight) || (window.scrollY < window.innerHeight);
+    // this.showNav = (window.scrollY < this.previousHeight) || (window.scrollY < window.innerHeight);
     this.previousHeight = window.scrollY;
     this.atTop = window.scrollY == 0;
-    console.log(ev);
-
   }
 
   ngOnInit() {
