@@ -151,7 +151,10 @@
 
 .speaker-bg {
     background-image: url(../../assets/stock_img/speakers.jpg);
-    background-size: cover;
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-position-x: left;
     background-repeat: no-repeat;
 }
