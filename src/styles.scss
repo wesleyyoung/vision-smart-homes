@@ -3,13 +3,13 @@
 @include mat-core();
 /*#ff3200*/
 $vision-red: (
-  50: rgb(240, 20, 5),
-  100: rgb(240, 20, 5),
-  200: rgb(240, 20, 5),
-  300: #FF3200,
-  400: #FF3200,
-  500: #FF3200,
-  600: #FF3200,
+  50: darkred,
+  100: darkred,
+  200: darkred,
+  300: darkred,
+  400: darkred,
+  500: darkred,
+  600: darkred,
   700: rgb(255, 50, 0),
   800: rgb(255, 50, 0),
   900: rgb(255, 50, 0),
@@ -188,4 +188,21 @@ outline: 1px solid rgb(25, 25, 25);
 
 .transparent {
   background-color: transparent !important;
+}
+
+.dark-bg {
+  background-color: rgb(20, 20, 20);
+}
+
+.contact-modal > .mat-dialog-container {
+  width: 100vw;
+  max-width: 600px;
+}
+
+.contact-modal > .mat-dialog-container > app-contact-modal {
+  width: 100%;
+}
+
+.dark-bg > .mat-dialog-container {
+  background-color: rgb(20, 20, 20);
 }

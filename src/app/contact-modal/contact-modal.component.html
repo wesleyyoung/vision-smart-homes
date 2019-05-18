@@ -1,0 +1,63 @@
+<div mat-dialog-content style="display: inline-block; width: 100%">
+  <p style="text-align: center">
+    <img src="../../assets/vision-logo-full.png" style="width: 80%;">
+  </p>
+  <form>
+    <p>
+      <mat-form-field appearance="legacy" color="accent" style="width: 100%;">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="requiredFormControl">
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="requiredFormControl.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" color="accent" style="width: 100%;">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy" color="accent" style="width: 100%;">
+        <mat-label>Phone</mat-label>
+        <span matPrefix>+1 &nbsp;</span>
+        <input matInput [formControl]="phoneFormControl">
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-error *ngIf="phoneFormControl.hasError('required')">
+          A phone number is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+          Please enter a valid phone number
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" color="accent" style="width: 100%;">
+        <mat-label>Message (optional)</mat-label>
+        <textarea 
+          matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="2"
+          cdkAutosizeMaxRows="5">
+        </textarea>
+        <mat-hint>Optional</mat-hint>
+      </mat-form-field>
+    </p>
+  </form>
+</div>
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="warn" (click)="onNoClick()" style="width: 100%; height: 45px;">Send</button>
+</mat-dialog-actions>
+<mat-dialog-actions align="center" style="margin-top: 10px;">
+  <button mat-button color="accent" (click)="onNoClick()">Cancel</button>
+</mat-dialog-actions>

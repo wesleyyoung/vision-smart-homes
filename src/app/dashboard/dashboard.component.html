@@ -8,7 +8,9 @@
                 Specialists
             </span>
         </h1>
-        <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile">Get Control Of Your Home</button>
+        <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile" (click)="openContactModal()">
+            Get Control Of Your Home
+        </button>
     </div>
 </div>
 <div class="container">
@@ -22,7 +24,7 @@
         <img src="../../assets/vision-logo-full.png" style="max-width: 75%">
         <h3 class="soft-txt roboto-thin">435-674-9290</h3>
         <h3 class="soft-txt roboto-thin">2051 E. Red Hills Pkwy, Suite 5 St. George, UT 84770</h3>
-        <button mat-raised-button class="ctl-btn-2">Book An Appointment</button>
+        <button mat-raised-button class="ctl-btn-2" (click)="openContactModal()">Book An Appointment</button>
     </div>
 </div>
 <div class="container">

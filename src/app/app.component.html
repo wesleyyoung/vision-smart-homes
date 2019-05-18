@@ -5,7 +5,7 @@
   <button mat-button *ngIf="!isMobile">Services</button>
   <button mat-button *ngIf="!isMobile">About</button>
   <button mat-button *ngIf="!isMobile">Contact</button>
-  <button mat-fab color=primary *ngIf="isMobile">
+  <button mat-fab color=primary *ngIf="isMobile" [class.transparent]="atTop">
     <mat-icon aria-label="Menu">menu</mat-icon>
   </button>
 </mat-toolbar>

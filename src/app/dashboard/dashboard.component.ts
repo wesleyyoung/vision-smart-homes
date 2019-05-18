@@ -1,4 +1,11 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { 
+  Component,
+  OnInit,
+  Inject,
+  HostListener,
+  NgZone ,
+  ViewChild
+} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +24,8 @@ import {
 } from '@angular/material';
 import { Brand } from '../brand-box/brand-box.component';
 import { Service } from '../service-tile/service-tile.component';
+import { ContactModalComponent } from '../contact-modal/contact-modal.component';
+
 
 export interface PortfolioPic {
   src: string;
@@ -37,7 +46,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: any,
     iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer
+    sanitizer: DomSanitizer,
+    private dialog: MatDialog
     ) { 
       iconRegistry.addSvgIcon('tv', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/tv.svg'));
       iconRegistry.addSvgIcon('speaker', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/speaker.svg'));
@@ -52,6 +62,12 @@ export class DashboardComponent implements OnInit {
   @HostListener('window:resize', ['$event']) onresize(ev) {
     this.windowWidth = ev.target.innerWidth;
     this.isMobile = this.windowWidth <= this.mobileTrigger;
+  }
+
+  openContactModal(): void {
+    this.dialog.open(ContactModalComponent, {
+      panelClass: ['dark-bg', 'contact-modal']
+    });
   }
 
   public automationBrands: Array<Brand> = [{
