@@ -8,7 +8,8 @@
                 Specialists
             </span>
         </h1>
-        <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile" (click)="openContactModal()">
+        <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile"
+            (click)="openContactModal()">
             Get Control Of Your Home
         </button>
     </div>
@@ -19,21 +20,44 @@
         <app-brand-box *ngFor="let brand of automationBrands; let i = index" [brand]="brand" [i]="i"></app-brand-box>
     </div>
 </div>
+<div class="full-height-container speaker-bg">
+    <mat-grid-list cols="6" rowHeight="100%" gutterSize="25px" style="overflow-x: visible" #brandBoxContainer>
+        <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile">
+
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="!isMobile ? 3 : 6" rowspan="1">
+            <div class="shadow-box boutique-container">
+                <span>
+                    <h1 class="soft-txt pacifico subject-header">High Perfomance Audio</h1>
+                    <div class="dash" style="margin-bottom: 50px;"></div>
+                    <p class="soft-txt">
+                        Not an aduiophile? No problem. You'll be annoying your friends and scowling at speaker-toting
+                        hikers with your refined sonic pallete in no time
+                    </p>
+                    <button mat-button class="cta-btn-3">Learn More</button>
+                </span>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div class="container">
+    <div class="content">
+        <h1 class="soft-txt roboto-thin subject-header">Your Lifestyle, Smarter</h1>
+        <div class="dash" style="margin-bottom: 50px;"></div>
+        <app-service-tile [serviceList]="ourServices1"></app-service-tile>
+        <app-service-tile [serviceList]="ourServices2"></app-service-tile>
+    </div>
+</div>
 <div class="container light-bg" [class.parallax]="!isMobile">
     <div class="content">
         <img src="../../assets/vision-logo-full.png" style="max-width: 75%">
         <h3 class="soft-txt roboto-thin">435-674-9290</h3>
+        <h3 class="soft-txt roboto-thin">sales@visionsmarthomes.com</h3>
         <h3 class="soft-txt roboto-thin">2051 E. Red Hills Pkwy, Suite 5 St. George, UT 84770</h3>
         <button mat-raised-button class="ctl-btn-2" (click)="openContactModal()">Book An Appointment</button>
     </div>
 </div>
 <div class="container">
-    <div class="content">
-        <app-service-tile [serviceList]="ourServices1"></app-service-tile>
-        <h1 class="soft-txt roboto-thin subject-header">Your Lifestyle, Smarter</h1>
-        <div class="dash" style="margin-bottom: 50px;"></div>
-        <app-service-tile [serviceList]="ourServices2"></app-service-tile>
-    </div>
     <div class="content">
         <h1 class="soft-txt roboto-thin subject-header">Our Work</h1>
         <div class="dash" style="margin-bottom: 50px;"></div>

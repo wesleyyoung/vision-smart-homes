@@ -7,7 +7,7 @@
       </mat-card-header>
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile class="nav-grid-tile" colspan="3" rowspan="2" (click)="openPage(brand.website)">
+  <mat-grid-tile class="nav-grid-tile" colspan="3" rowspan="2">
     <img class="tile-img" [src]="!isMobile ? brand.logo : brand.logo_sm">
   </mat-grid-tile>
   <mat-grid-tile class="nav-grid-tile" *ngIf="isEven(i)" colspan="3" rowspan="2" [@flyIn]="isInViewport ? 'on-page' : 'rest-right'">

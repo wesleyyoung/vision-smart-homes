@@ -37,3 +37,8 @@
     font-family: Cookie;
     src: url(./Cookie/Cookie-Regular.ttf) format("truetype");
 }
+
+@font-face{
+    font-family: Pacifico;
+    src: url(./Pacifico/Pacifico-Regular.ttf) format("truetype");
+}

@@ -82,6 +82,25 @@
     border: 2px solid transparent !important;
 }
 
+.cta-btn-3 {
+    width: 100%;
+    max-width: 250px;
+    height: 60px;
+    font-size: 18px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: rgb(200, 200, 200);
+    background-color: transparent;
+    border: 2px solid rgb(200, 200, 200);
+    transition: all 1s;
+}
+
+.cta-btn-3:hover {
+    color: rgb(200, 200, 200);
+    background-color: #8B0000;
+    border: 2px solid transparent !important;
+}
+
 .link-to-btn {
     width: 100%; 
     max-width: 750px; 
@@ -124,6 +143,19 @@
     padding-bottom: 100px;
 }
 
+.analogue-amp-bg {
+    background-image: url(../../assets/stock_img/analogue-amp.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.speaker-bg {
+    background-image: url(../../assets/stock_img/speakers.jpg);
+    background-size: cover;
+    background-position-x: left;
+    background-repeat: no-repeat;
+}
+
 .rock-salt {
     font-family: Rock-Salt;
 }
@@ -134,4 +166,17 @@
 
 .our-work-list-sm {
     @include mdc-image-list-masonry-columns(2, 1px);
+}
+
+.boutique-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 45px 0 45px;
+    line-height: 100vh;
+}
+
+.boutique-container > span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
 }
