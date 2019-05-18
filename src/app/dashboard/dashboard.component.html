@@ -1,17 +1,20 @@
 <div class="banner" [class.banner-sm]="isMobile" [class.banner-lg]="!isMobile" [class.parallax]="!isMobile">
     <div class="banner-box">
-        <h1 [class.lg-txt]="!isMobile" [class.sm-txt]="isMobile">
-            Smart Home
-            <span class="highlight cookie"> & </span>
-            Audio
-            <span class="highlight">
-                Specialists
-            </span>
-        </h1>
-        <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile"
-            (click)="openContactModal()">
-            Get Control Of Your Home
-        </button>
+        <span>
+            <h1 [class.lg-txt]="!isMobile" [class.sm-txt]="isMobile">
+                Smart Home
+                <span class="highlight cookie"> & </span>
+                Audio
+                <span class="highlight">
+                    Specialists
+                </span>
+            </h1>
+            <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile"
+                (click)="openContactModal()">
+                Get Control Of Your Home
+            </button>
+        </span>
+
     </div>
 </div>
 <div class="container">
@@ -20,7 +23,7 @@
         <app-brand-box *ngFor="let brand of automationBrands; let i = index" [brand]="brand" [i]="i"></app-brand-box>
     </div>
 </div>
-<div class="full-height-container speaker-bg">
+<div class="full-height-container" [class.speaker-bg]="!isMobile" [class.sony-speaker-bg]="isMobile">
     <mat-grid-list cols="6" rowHeight="100%" gutterSize="25px" style="overflow-x: visible" #brandBoxContainer>
         <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile">
 
