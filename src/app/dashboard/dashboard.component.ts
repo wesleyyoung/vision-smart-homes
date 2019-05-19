@@ -38,7 +38,7 @@ export interface PortfolioPic {
 })
 export class DashboardComponent implements OnInit {
 
-  public visiblePics: number = 12;
+  public visiblePics: number = 14;
   public windowWidth: number;
   public isMobile: boolean;
   public mobileTrigger: number = 750;
@@ -122,11 +122,11 @@ export class DashboardComponent implements OnInit {
     },{
       src: '../../assets/portfolio-img/portfolio-5.jpg'
     },{
-      src: '../../assets/portfolio-img/portfolio-6.jpg'
+      src: '../../assets/portfolio-img/portfolio-31.jpg'
     },{
       src: '../../assets/portfolio-img/portfolio-7.jpg'
     },{
-      src: '../../assets/portfolio-img/portfolio-8.jpg'
+      src: '../../assets/portfolio-img/portfolio-21.jpg'
     },{
       src: '../../assets/portfolio-img/portfolio-9.jpg'
     },{
@@ -150,7 +150,7 @@ export class DashboardComponent implements OnInit {
     },{
       src: '../../assets/portfolio-img/portfolio-20.jpg'
     },{
-      src: '../../assets/portfolio-img/portfolio-21.jpg'
+      src: '../../assets/portfolio-img/portfolio-8.jpg'
     },{
       src: '../../assets/portfolio-img/portfolio-22.jpg'
     },{
@@ -170,7 +170,7 @@ export class DashboardComponent implements OnInit {
     },{
       src: '../../assets/portfolio-img/portfolio-30.jpg'
     },{
-      src: '../../assets/portfolio-img/portfolio-31.jpg'
+      src: '../../assets/portfolio-img/portfolio-6.jpg'
     },{
       src: '../../assets/portfolio-img/portfolio-32.jpg'
     },{
