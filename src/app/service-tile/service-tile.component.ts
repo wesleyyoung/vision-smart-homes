@@ -17,6 +17,7 @@ import {
   animateChild,
   transition
 } from '@angular/animations';
+import { ApiService } from '../api.service';
 
 export interface Service {
   headline: string;
@@ -59,23 +60,15 @@ export interface Service {
 export class ServiceTileComponent implements OnInit {
 
   public colSpan: number;
-  public isMobile: boolean;
+  public isMobile: boolean = this.api.isMobileWatcher;
   public mobileTrigger: number = 750;
   public isInViewport: boolean;
 
   @ViewChild('serviceBoxContainer') boxes: any;
 
-  constructor(@Inject(DOCUMENT) private document: any) { }
-
-  @HostListener('window:resize', ['$event']) onresize(ev) {
-    if (window.innerWidth <= this.mobileTrigger) {
-      this.colSpan = 6;
-      this.isMobile = false;
-    } else {
-      this.colSpan = 2;
-      this.isMobile = true;
-    }
-  }
+  constructor(
+    @Inject(DOCUMENT) private document: any,
+    private api: ApiService) { }
 
   @HostListener('window:scroll', []) onscroll() {
     let offset = this.boxes._element.nativeElement.offsetTop;
@@ -87,13 +80,19 @@ export class ServiceTileComponent implements OnInit {
 
   ngOnInit() {
     this.isInViewport = false;
-    if (window.innerWidth <= this.mobileTrigger) {
+    if (this.isMobile) {
       this.colSpan = 6;
-      this.isMobile = false;
     } else {
       this.colSpan = 2;
-      this.isMobile = true;
     }
+    this.api.isMobile.subscribe(isMobile => {
+      this.isMobile = isMobile;
+      if (isMobile) {
+        this.colSpan = 6;
+      } else {
+        this.colSpan = 2;
+      }
+    });
   }
 
 }

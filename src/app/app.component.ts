@@ -8,6 +8,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -24,14 +25,9 @@ export class AppComponent implements OnInit{
   public previousHeight: number = window.scrollY;
   public atTop: boolean = this.previousHeight == 0;
   public showNav: boolean;
-  public isMobile: boolean;
-  public mobileTrigger: number = 750;
+  public isMobile: boolean = this.api.isMobileWatcher;
 
-  constructor() { }
-
-  @HostListener('window:resize', ['$event']) onresize(ev) {
-    this.isMobile = ev.target.innerWidth <= this.mobileTrigger;
-  }
+  constructor(private api: ApiService) { }
 
   @HostListener('window:scroll', ['$event']) onscroll(ev) {
     // this.showNav = (window.scrollY < this.previousHeight) || (window.scrollY < window.innerHeight);
@@ -41,6 +37,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.showNav = true;
-    this.isMobile = window.innerWidth <= this.mobileTrigger;
+    this.api.isMobile.subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 }

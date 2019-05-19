@@ -1,7 +1,7 @@
 <mat-grid-list cols="6" rowHeight="120px" gutterSize="5px" #serviceBoxContainer>
   <mat-grid-tile [colspan]="colSpan" rowspan="2" *ngFor="let service of serviceList; let i = index;" style="overflow: visible !important;">
     <div class="service-box" 
-    [@flyIn]="isInViewport ? 'on-page' : !isMobile || i == 0 ? 'rest-left' : i == 1 ? 'rest-center' : i == 2 ? 'rest-right': 'rest-center'">
+    [@flyIn]="isInViewport ? 'on-page' : isMobile || i == 0 ? 'rest-left' : i == 1 ? 'rest-center' : i == 2 ? 'rest-right': 'rest-center'">
       <mat-icon class="big-icon">{{service.icon}}</mat-icon>
       <h3 class="headline-txt">{{service.headline}}</h3>
       <div class="dash"></div>

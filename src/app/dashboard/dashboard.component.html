@@ -85,8 +85,8 @@
     <div class="content-strip">
         <h1 class="soft-txt roboto-thin subject-header">Our Work</h1>
         <div class="dash" style="margin-bottom: 100px;"></div>
-        <ul class="mdc-image-list mdc-image-list--masonry" [class.our-work-list-lg]="windowWidth > 800"
-            [class.our-work-list-sm]="windowWidth <= 800">
+        <ul class="mdc-image-list mdc-image-list--masonry" [class.our-work-list-lg]="!isMobile"
+            [class.our-work-list-sm]="isMobile">
             <li class="mdc-image-list__item" *ngFor="let pic of visiblePortfolioPics; let i = index">
                 <img class="mdc-image-list__image" [src]="pic.src">
             </li>

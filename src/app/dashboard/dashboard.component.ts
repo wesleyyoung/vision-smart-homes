@@ -25,6 +25,7 @@ import {
 import { Brand } from '../brand-box/brand-box.component';
 import { Service } from '../service-tile/service-tile.component';
 import { ContactModalComponent } from '../contact-modal/contact-modal.component';
+import { ApiService } from '../api.service';
 
 
 export interface PortfolioPic {
@@ -39,15 +40,14 @@ export interface PortfolioPic {
 export class DashboardComponent implements OnInit {
 
   public visiblePics: number = 14;
-  public windowWidth: number;
-  public isMobile: boolean;
-  public mobileTrigger: number = 750;
+  public isMobile: boolean = this.api.isMobileWatcher;
 
   constructor(
     @Inject(DOCUMENT) private document: any,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private api: ApiService
     ) { 
       iconRegistry.addSvgIcon('tv', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/tv.svg'));
       iconRegistry.addSvgIcon('speaker', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/speaker.svg'));
@@ -58,11 +58,6 @@ export class DashboardComponent implements OnInit {
       iconRegistry.addSvgIcon('phone', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/phone.svg'));
       iconRegistry.addSvgIcon('pin', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/pin.svg'));
     }
-
-  @HostListener('window:resize', ['$event']) onresize(ev) {
-    this.windowWidth = ev.target.innerWidth;
-    this.isMobile = this.windowWidth <= this.mobileTrigger || ev.target.innerHeight <= 600;
-  }
 
   openContactModal(): void {
     this.dialog.open(ContactModalComponent, {
@@ -197,8 +192,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.windowWidth = window.innerWidth;
-    this.isMobile = this.windowWidth <= this.mobileTrigger || window.innerHeight <= 600;
+    this.api.isMobile.subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
     for (var i = 0; i < this.visiblePics; i++) {
       this.visiblePortfolioPics.push(this.portfolioPics[i]);
     }

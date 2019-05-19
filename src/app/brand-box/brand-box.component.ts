@@ -16,6 +16,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { ApiService } from '../api.service';
 
 export interface Brand {
   name: string;
@@ -53,16 +54,14 @@ export interface Brand {
 })
 export class BrandBoxComponent implements OnInit {
 
-  public isMobile: boolean;
+  public isMobile: boolean = this.api.isMobileWatcher;
   public isInViewport: boolean;
 
   @ViewChild('brandBoxContainer') box: any;
 
-  constructor(@Inject(DOCUMENT) private document: any) { }
-
-  @HostListener('window:resize', ['$event']) onresize(ev) {
-    this.isMobile = ev.target.innerWidth <= 750;
-  }
+  constructor(
+    @Inject(DOCUMENT) private document: any,
+    private api: ApiService) { }
 
   @HostListener('window:scroll', []) onscroll() {
     let offset = this.box._element.nativeElement.offsetTop;
@@ -82,7 +81,9 @@ export class BrandBoxComponent implements OnInit {
   }
   ngOnInit() {
     this.isInViewport = false;
-    this.isMobile = window.innerWidth <= 750;
+    this.api.isMobile.subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 
 }

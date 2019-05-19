@@ -18,6 +18,7 @@ import {
 } from '@angular/forms';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { take } from 'rxjs/operators';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-contact-modal',
@@ -26,19 +27,15 @@ import { take } from 'rxjs/operators';
 })
 export class ContactModalComponent implements OnInit {
 
-  public isMobile: boolean;
-  public mobileTrigger: number = 750;
+  public isMobile: boolean = this.api.isMobileWatcher;
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
   constructor(
     public dialogRef: MatDialogRef<ContactModalComponent>,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private api: ApiService
   ) { }
-
-  @HostListener('window:resize', ['$event']) onresize(ev) {
-    this.isMobile = ev.target.innerWidth <= this.mobileTrigger;
-  }
 
   public emailFormControl = new FormControl('', [
     Validators.required,
@@ -63,7 +60,9 @@ export class ContactModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth <= this.mobileTrigger;
+    this.api.isMobile.subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 
 }
