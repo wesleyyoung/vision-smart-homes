@@ -41,6 +41,7 @@ export class DashboardComponent implements OnInit {
 
   public visiblePics: number = 14;
   public isMobile: boolean = this.api.isMobileWatcher;
+  public isMedium: boolean = this.api.isMediumWatcher;
 
   constructor(
     @Inject(DOCUMENT) private document: any,
@@ -194,6 +195,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.api.isMobile.subscribe(isMobile => {
       this.isMobile = isMobile;
+    });
+    this.api.isMedium.subscribe(isMed => {
+      this.isMedium = isMed;
     });
     for (var i = 0; i < this.visiblePics; i++) {
       this.visiblePortfolioPics.push(this.portfolioPics[i]);

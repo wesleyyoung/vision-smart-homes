@@ -17,15 +17,18 @@ export class ApiService {
 
   public mobileWidthTrigger = 750;
   public mobileHeightTrigger = 600;
-  public isMobileWatcher: boolean = window.innerWidth <= this.mobileWidthTrigger || window.innerHeight <= this.mobileHeightTrigger;;
+  public mediumWidthTrigger = 2000;
+  public isMobileWatcher: boolean = window.innerWidth <= this.mobileWidthTrigger || window.innerHeight <= this.mobileHeightTrigger;
   public isMobile = new Subject<boolean>();
+  public isMediumWatcher: boolean = !this.isMobileWatcher && window.innerWidth <= this.mediumWidthTrigger;
+  public isMedium = new Subject<boolean>();
 
   constructor(@Inject(DOCUMENT) private document: any) {
     window.addEventListener('resize', ev => {
       this.isMobileWatcher = window.innerWidth <= this.mobileWidthTrigger || window.innerHeight <= this.mobileHeightTrigger;
+      this.isMediumWatcher = !this.isMobileWatcher && window.innerWidth < this.mediumWidthTrigger;
       this.isMobile.next(this.isMobileWatcher);
-    })
-    this.isMobileWatcher = window.innerWidth <= this.mobileWidthTrigger || window.innerHeight <= this.mobileHeightTrigger;
-    this.isMobile.next(window.innerWidth <= this.mobileWidthTrigger || window.innerHeight <= this.mobileHeightTrigger);
+      this.isMedium.next(this.isMediumWatcher);
+    });
   }
 }

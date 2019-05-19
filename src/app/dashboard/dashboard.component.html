@@ -10,7 +10,7 @@
                 </span>
             </h1>
             <button mat-raised-button class="ctl-btn-1" [class.ctl-btn-1-lg]="!isMobile" [class.ctl-btn-1-sm]="isMobile"
-                (click)="openContactModal()">
+                (click)="openContactModal()" aria-label="Get control of your home">
                 Get Control Of Your Home
             </button>
         </span>
@@ -23,7 +23,7 @@
         <app-brand-box *ngFor="let brand of automationBrands; let i = index" [brand]="brand" [i]="i"></app-brand-box>
     </div>
 </div>
-<div class="full-height-container" [class.speaker-bg]="!isMobile" [class.sony-speaker-sm-bg]="isMobile">
+<div class="full-height-container" [class.speaker-bg]="!isMobile && !isMedium" [class.speaker-md-bg]="isMedium" [class.sony-speaker-sm-bg]="isMobile">
     <mat-grid-list cols="6" rowHeight="100%" style="overflow-x: visible" #brandBoxContainer>
         <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile">
 
@@ -38,13 +38,13 @@
                         speaker-toting
                         hikers with your refined sonic palate in no time
                     </p>
-                    <button mat-button class="cta-btn-3">Learn More</button>
+                    <button mat-button class="cta-btn-3" aria-label="Learn more about high performance audio">Learn More</button>
                 </span>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
-<div class="full-height-container" [class.fiber-switch-bg]="!isMobile" [class.cables-sm-bg]="isMobile">
+<div class="full-height-container" [class.fiber-switch-bg]="!isMobile && !isMedium" [class.fiber-switch-md-bg]="isMedium" [class.cables-sm-bg]="isMobile">
     <mat-grid-list cols="6" rowHeight="100%" style="overflow-x: visible" #brandBoxContainer>
         <mat-grid-tile [colspan]="!isMobile ? 3 : 6" rowspan="1">
             <div class="shadow-box boutique-container">
@@ -55,7 +55,7 @@
                         Waiting sucks. Atleast, we think so. Give your smart home the brain power it needs to let you stream
                         your favorite movies, work from home, and keep in touch with your friends
                     </p>
-                    <button mat-button class="cta-btn-3">Learn More</button>
+                    <button mat-button class="cta-btn-3" aria-label="Learn more about high end home networks">Learn More</button>
                 </span>
             </div>
         </mat-grid-tile>
@@ -78,7 +78,7 @@
         <h3 class="soft-txt roboto-thin">435-674-9290</h3>
         <h3 class="soft-txt roboto-thin">sales@visionsmarthomes.com</h3>
         <h3 class="soft-txt roboto-thin">2051 E. Red Hills Pkwy, Suite 5 St. George, UT 84770</h3>
-        <button mat-raised-button class="ctl-btn-2" (click)="openContactModal()">Book An Appointment</button>
+        <button mat-raised-button class="ctl-btn-2" (click)="openContactModal()" aria-label="Book an appointment with Vision Electronics">Book An Appointment</button>
     </div>
 </div>
 <div class="container">
@@ -92,7 +92,7 @@
             </li>
         </ul>
         <div style="margin-top: 25px;">
-            <button mat-raised-button class="link-to-btn">
+            <button mat-raised-button class="link-to-btn" aria-label="Explore portfolio image gallery">
                 View Full Gallery
             </button>
         </div>

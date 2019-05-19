@@ -171,6 +171,14 @@ outline: 1px solid rgb(25, 25, 25);
   max-height: 250px !important;
 }
 
+.brand-card > mat-card-actions {
+  padding: 0 !important;
+}
+
+.right-brand-card > mat-card-actions {
+  padding: 0 !important;
+}
+
 .nav-grid-tile {
   background-color: transparent;
 }

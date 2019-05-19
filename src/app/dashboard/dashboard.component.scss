@@ -170,6 +170,16 @@
     background-repeat: no-repeat;
 }
 
+.speaker-md-bg {
+    background-image: url(../../assets/stock_img/speakers-md.webp);
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-x: left;
+    background-repeat: no-repeat;
+}
+
 .sony-speaker-bg {
     background-image: url(../../assets/stock_img/sony-speaker.webp);
     background-size: cover !important;
@@ -192,6 +202,16 @@
 
 .fiber-switch-bg {
     background-image: url(../../assets/stock_img/fiber-switch.webp);
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-x: left;
+    background-repeat: no-repeat;
+}
+
+.fiber-switch-md-bg {
+    background-image: url(../../assets/stock_img/fiber-switch-md.webp);
     background-size: cover !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
