@@ -61,7 +61,7 @@ export class DashboardComponent implements OnInit {
 
   @HostListener('window:resize', ['$event']) onresize(ev) {
     this.windowWidth = ev.target.innerWidth;
-    this.isMobile = this.windowWidth <= this.mobileTrigger;
+    this.isMobile = this.windowWidth <= this.mobileTrigger || ev.target.innerHeight <= 600;
   }
 
   openContactModal(): void {
@@ -198,7 +198,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.windowWidth = window.innerWidth;
-    this.isMobile = this.windowWidth <= this.mobileTrigger;
+    this.isMobile = this.windowWidth <= this.mobileTrigger || window.innerHeight <= 600;
     for (var i = 0; i < this.visiblePics; i++) {
       this.visiblePortfolioPics.push(this.portfolioPics[i]);
     }
