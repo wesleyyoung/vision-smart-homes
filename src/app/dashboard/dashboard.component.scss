@@ -3,7 +3,6 @@
 .banner {
     width: 100vw;
     height: 95vh;
-    background-image: url(../../assets/OakCinemaRoomSlider.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -24,10 +23,12 @@
 
 .banner-lg {
     background-position-x: center;
+    background-image: url(../../assets/OakCinemaRoomSlider.jpg);
 }
 
 .banner-sm {
     background-position-x: left;
+    background-image: url(../../assets/OakCinemaRoomSlider-sm.jpg);
 }
 
 .banner-box > span > h1 {
@@ -179,6 +180,16 @@
     background-repeat: no-repeat;
 }
 
+.sony-speaker-sm-bg {
+    background-image: url(../../assets/stock_img/sony-speaker-sm.webp);
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-x: left;
+    background-repeat: no-repeat;
+}
+
 .fiber-switch-bg {
     background-image: url(../../assets/stock_img/fiber-switch.webp);
     background-size: cover !important;
@@ -191,6 +202,16 @@
 
 .cables-bg {
     background-image: url(../../assets/stock_img/cables-connection.webp);
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-x: left;
+    background-repeat: no-repeat;
+}
+
+.cables-sm-bg {
+    background-image: url(../../assets/stock_img/cables-connection-sm.webp);
     background-size: cover !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
