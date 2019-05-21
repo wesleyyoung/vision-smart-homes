@@ -1,9 +1,9 @@
 <mat-toolbar class="nav-bar" role="toolbar" *ngIf="showNav" [class.solid-nav-bar]="!atTop" [class.transparent]="atTop">
-  <img src="../assets/vision-logo-e.png" style="height: 50px; width: 50px">
+  <img src="../assets/vision-logo-e.png" style="height: 50px; width: 50px" routerLink="./home">
   <span style="flex: 1 1 auto;"></span>
-  <button mat-button *ngIf="!isMobile">Products</button>
-  <button mat-button *ngIf="!isMobile">Services</button>
-  <button mat-button *ngIf="!isMobile">About</button>
+  <button mat-button *ngIf="!isMobile" routerLink="./products">Products</button>
+  <button mat-button *ngIf="!isMobile" routerLink="./services">Services</button>
+  <button mat-button *ngIf="!isMobile" routerLink="./about">About</button>
   <button mat-button *ngIf="!isMobile">Contact</button>
   <button mat-fab color=primary *ngIf="isMobile" [class.transparent]="atTop">
     <mat-icon aria-label="Menu">menu</mat-icon>

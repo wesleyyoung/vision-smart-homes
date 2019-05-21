@@ -24,13 +24,10 @@ import {
 } from '@angular/material';
 import { Brand } from '../brand-box/brand-box.component';
 import { Service } from '../service-tile/service-tile.component';
+import { FullServiceTile } from '../full-service-tile/full-service-tile.component';
 import { ContactModalComponent } from '../contact-modal/contact-modal.component';
-import { ApiService } from '../api.service';
+import { ApiService, PortfolioPic } from '../api.service';
 
-
-export interface PortfolioPic {
-  src: string;
-}
 
 @Component({
   selector: 'app-dashboard',
@@ -72,21 +69,23 @@ export class DashboardComponent implements OnInit {
       website: 'https://crestron.com',
       info: 'Control Systems for Home Automation, Campus & Building Control by Crestron Electronics',
       logo: '../../assets/crestron-logo-png-transparent.png',
-      logo_sm: '../../assets/crestron-logo-png-transparent-sm.png'
+      logo_sm: '../../assets/crestron-logo-png-transparent-sm.png',
+      info_page: '../crestron'
     }, {
       name: 'Control 4™',
       subname: 'Professional Installers And Programmers',
       website: 'https://control4.com',
       info: 'The Magic Of A Truly Smart Home',
       logo: '../../assets/control-4-logo.png',
-      logo_sm: '../../assets/control-4-logo-sm.png'
+      logo_sm: '../../assets/control-4-logo-sm.png',
+      info_page: '../control4'
     }
   ];
 
   public ourServices1: Array<Service> = [{
-    headline: 'TV',
-    tagline: 'No cables. No clutter. Just entertainment',
-    icon: 'tv'
+    headline: 'Smart Lighting',
+    tagline: 'The keystone of every dream home, focused on your needs',
+    icon: 'wb_incandescent'
   }, {
     headline: 'Wi-Fi',
     tagline: 'Business class wireless networks',
@@ -100,7 +99,7 @@ export class DashboardComponent implements OnInit {
   public ourServices2: Array<Service> = [{
     headline: 'Security',
     tagline: 'Cameras, doorlocks, and automated alarm systems',
-    icon: 'lock'
+    icon: 'security'
   }, {
     headline: 'Shades',
     tagline: 'Bring your home to life with the touch of a button',
@@ -111,76 +110,21 @@ export class DashboardComponent implements OnInit {
     icon: '4k'
   }];
 
-  public portfolioPics: Array<PortfolioPic> = [{
-      src: '../../assets/portfolio-img/portfolio-1.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-2.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-5.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-31.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-7.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-21.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-9.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-10.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-12.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-13.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-14.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-15.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-16.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-17.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-18.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-19.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-20.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-8.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-22.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-23.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-24.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-25.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-26.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-27.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-28.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-29.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-30.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-6.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-32.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-33.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-34.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-35.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-36.jpg'
-    },{
-      src: '../../assets/portfolio-img/portfolio-37.jpg'
-    }
-  ];
+  public fullServiceTile1: FullServiceTile = {
+    headline: 'High Perfomance Audio',
+    tagline: 'Not an audiophile? No problem. We\'ll have you annoying your friends and scowling at speaker-toting hikers with your refined sonic palate in no time',
+    bgSm: 'url(../../assets/stock_img/sony-speaker-sm.webp)',
+    bgMd: 'url(../../assets/stock_img/speakers-md.webp)',
+    bgLg: 'url(../../assets/stock_img/speakers.webp)'
+  };
+
+  public fullServiceTile2: FullServiceTile = {
+    headline: 'Enterprise Level Networks',
+    tagline: 'Waiting sucks. Atleast, we think so. Give your smart home the brain power it needs to let you stream your favorite movies, work from home, and keep in touch with your friends',
+    bgSm: 'url(../../assets/stock_img/cables-connection-sm.webp)',
+    bgMd: 'url(../../assets/stock_img/fiber-switch-md.webp)',
+    bgLg: 'url(../../assets/stock_img/fiber-switch.webp)'
+  };
 
   public visiblePortfolioPics: Array<PortfolioPic> = [];
 
@@ -199,9 +143,10 @@ export class DashboardComponent implements OnInit {
     this.api.isMedium.subscribe(isMed => {
       this.isMedium = isMed;
     });
-    for (var i = 0; i < this.visiblePics; i++) {
-      this.visiblePortfolioPics.push(this.portfolioPics[i]);
-    }
+    this.api.getPortfolioPics(pics => {
+      for (var i = 0; i < this.visiblePics; i++) {
+        this.visiblePortfolioPics.push(pics[i]);
+      }
+    });
   }
-
 }

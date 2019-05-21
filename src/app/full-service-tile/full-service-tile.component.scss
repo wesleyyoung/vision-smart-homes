@@ -1,0 +1,21 @@
+.boutique-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 45px 0 45px;
+    line-height: 100vh;
+}
+  
+.boutique-container > span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
+}
+
+.boutique-section {
+    background-size: cover !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-x: left;
+    background-repeat: no-repeat;
+}

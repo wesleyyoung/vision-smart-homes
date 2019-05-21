@@ -229,3 +229,94 @@ outline: 1px solid rgb(25, 25, 25);
 .shadow-box {
   background-color: rgba(15, 15, 15, .75);
 }
+
+.ctl-btn-1 {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50px !important;
+  box-shadow: none !important;
+  background-color: #8B0000;
+  transition: all .3s ease;
+}
+
+.ctl-btn-1-sm {
+  height: 45px;
+  font-size: 14px !important;
+}
+
+.ctl-btn-1-lg {
+  height: 60px;
+  font-size: 18px !important;
+}
+
+.ctl-btn-2 {
+  width: 100%;
+  max-width: 250px;
+  height: 60px;
+  font-size: 18px !important;
+  border-radius: 50px !important;
+  box-shadow: none !important;
+  color: #8B0000;
+  background-color: transparent;
+  border: 2px solid #8B0000;
+  transition: all 1s;
+}
+
+.ctl-btn-2:hover {
+  color: rgb(200, 200, 200);
+  background-color: #8B0000;
+  border: 2px solid transparent !important;
+}
+
+.cta-btn-3 {
+  width: 100%;
+  max-width: 250px;
+  height: 60px;
+  font-size: 18px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: rgb(200, 200, 200);
+  background-color: transparent;
+  border: 2px solid rgb(200, 200, 200) !important;
+  transition: all 1s;
+}
+
+.cta-btn-3:hover {
+  color: rgb(200, 200, 200);
+  background-color: #8B0000;
+  border: 2px solid transparent !important;
+}
+
+.link-to-btn {
+  width: 100%; 
+  max-width: 750px; 
+  height: 45px;
+  color: rgb(200, 200, 200);
+  background-color: #8B0000;
+}
+
+.roboto-thin {
+  font-family: Roboto-Thin;
+}
+
+.roboto-med {
+  font-family: Roboto-Medium;
+}
+
+.roboto-reg {
+  font-family: Roboto-Regular;
+}
+
+.highlight {
+  /*color: #ff3200;*/
+  color: #8B0000;
+}
+
+.soft-txt {
+  color: rgb(200, 200, 200);
+}
+
+.subject-header {
+  font-size: 48px;
+  
+}

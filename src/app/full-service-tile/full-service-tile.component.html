@@ -1,0 +1,21 @@
+<div class="full-height-container boutique-section" 
+[style.background-image]="!isMobile && !isMedium ? service.bgLg : isMedium ? service.bgMd : service.bgSm">
+    <mat-grid-list cols="6" rowHeight="100%" style="overflow-x: visible">
+        <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile && align == 'right'"></mat-grid-tile>
+        <mat-grid-tile [colspan]="!isMobile ? 3 : 6" rowspan="1">
+            <div class="shadow-box boutique-container">
+                <span>
+                    <h1 class="soft-txt pacifico subject-header">{{service.headline}}</h1>
+                    <div class="dash" style="margin-bottom: 50px;"></div>
+                    <p class="soft-txt">
+                        {{service.tagline}}
+                    </p>
+                    <button mat-button class="cta-btn-3" aria-label="Learn more about high performance audio">
+                      Learn More
+                    </button>
+                </span>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile && align == 'left'"></mat-grid-tile>
+    </mat-grid-list>
+</div>

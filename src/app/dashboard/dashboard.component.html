@@ -23,47 +23,8 @@
         <app-brand-box *ngFor="let brand of automationBrands; let i = index" [brand]="brand" [i]="i"></app-brand-box>
     </div>
 </div>
-<div class="full-height-container" [class.speaker-bg]="!isMobile && !isMedium" [class.speaker-md-bg]="isMedium" [class.sony-speaker-sm-bg]="isMobile">
-    <mat-grid-list cols="6" rowHeight="100%" style="overflow-x: visible" #brandBoxContainer>
-        <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile">
-
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="!isMobile ? 3 : 6" rowspan="1">
-            <div class="shadow-box boutique-container">
-                <span>
-                    <h1 class="soft-txt pacifico subject-header">High Perfomance Audio</h1>
-                    <div class="dash" style="margin-bottom: 50px;"></div>
-                    <p class="soft-txt">
-                        Not an audiophile? No problem. We'll have you annoying your friends and scowling at
-                        speaker-toting
-                        hikers with your refined sonic palate in no time
-                    </p>
-                    <button mat-button class="cta-btn-3" aria-label="Learn more about high performance audio">Learn More</button>
-                </span>
-            </div>
-        </mat-grid-tile>
-    </mat-grid-list>
-</div>
-<div class="full-height-container" [class.fiber-switch-bg]="!isMobile && !isMedium" [class.fiber-switch-md-bg]="isMedium" [class.cables-sm-bg]="isMobile">
-    <mat-grid-list cols="6" rowHeight="100%" style="overflow-x: visible" #brandBoxContainer>
-        <mat-grid-tile [colspan]="!isMobile ? 3 : 6" rowspan="1">
-            <div class="shadow-box boutique-container">
-                <span>
-                    <h1 class="soft-txt pacifico subject-header">Enterprise Level Networks</h1>
-                    <div class="dash" style="margin-bottom: 50px;"></div>
-                    <p class="soft-txt">
-                        Waiting sucks. Atleast, we think so. Give your smart home the brain power it needs to let you stream
-                        your favorite movies, work from home, and keep in touch with your friends
-                    </p>
-                    <button mat-button class="cta-btn-3" aria-label="Learn more about high end home networks">Learn More</button>
-                </span>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="3" rowspan="1" *ngIf="!isMobile">
-
-        </mat-grid-tile>
-    </mat-grid-list>
-</div>
+<app-full-service-tile [service]="fullServiceTile1" align="right"></app-full-service-tile>
+<app-full-service-tile [service]="fullServiceTile2" align="left"></app-full-service-tile>
 <div class="container">
     <div class="content">
         <h1 class="soft-txt roboto-thin subject-header">Your Lifestyle, Smarter</h1>
@@ -78,7 +39,8 @@
         <h3 class="soft-txt roboto-thin">435-674-9290</h3>
         <h3 class="soft-txt roboto-thin">sales@visionsmarthomes.com</h3>
         <h3 class="soft-txt roboto-thin">2051 E. Red Hills Pkwy, Suite 5 St. George, UT 84770</h3>
-        <button mat-raised-button class="ctl-btn-2" (click)="openContactModal()" aria-label="Book an appointment with Vision Electronics">Book An Appointment</button>
+        <button mat-raised-button class="ctl-btn-2" (click)="openContactModal()"
+            aria-label="Book an appointment with Vision Electronics">Book An Appointment</button>
     </div>
 </div>
 <div class="container">
@@ -92,7 +54,7 @@
             </li>
         </ul>
         <div style="margin-top: 25px;">
-            <button mat-raised-button class="link-to-btn" aria-label="Explore portfolio image gallery">
+            <button mat-raised-button class="link-to-btn" aria-label="Explore portfolio image gallery" routerLink="../about">
                 View Full Gallery
             </button>
         </div>

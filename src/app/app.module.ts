@@ -35,6 +35,12 @@ import {
 } from '@angular/material';
 import { ServiceTileComponent } from './service-tile/service-tile.component';
 import { ContactModalComponent } from './contact-modal/contact-modal.component';
+import { AboutComponent } from './about/about.component';
+import { ProductsComponent } from './products/products.component';
+import { ServicesComponent } from './services/services.component';
+import { CrestronComponent } from './crestron/crestron.component';
+import { Control4Component } from './control4/control4.component';
+import { FullServiceTileComponent } from './full-service-tile/full-service-tile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,13 @@ import { ContactModalComponent } from './contact-modal/contact-modal.component';
     DashboardComponent,
     BrandBoxComponent,
     ServiceTileComponent,
-    ContactModalComponent
+    ContactModalComponent,
+    AboutComponent,
+    ProductsComponent,
+    ServicesComponent,
+    CrestronComponent,
+    Control4Component,
+    FullServiceTileComponent
   ],
   imports: [
     BrowserModule,
