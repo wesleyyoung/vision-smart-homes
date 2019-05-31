@@ -1,9 +1,10 @@
 {
   "name": "vision-smart-homes",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "node app.js",
+    "startWithPm2": "pm2 app.js",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
