@@ -83,9 +83,9 @@ export class DashboardComponent implements OnInit {
   ];
 
   public ourServices1: Array<Service> = [{
-    headline: 'Smart Lighting',
-    tagline: 'The keystone of every dream home, focused on your needs',
-    icon: 'wb_incandescent'
+    headline: 'TV',
+    tagline: 'No cables. No clutter. Just entertainment',
+    icon: 'tv'
   }, {
     headline: 'Wi-Fi',
     tagline: 'Business class wireless networks',
