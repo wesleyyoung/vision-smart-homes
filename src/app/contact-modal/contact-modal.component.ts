@@ -29,7 +29,7 @@ export class ContactModalComponent implements OnInit {
 
   public isMobile: boolean = this.api.isMobileWatcher;
 
-  @ViewChild('autosize') autosize: CdkTextareaAutosize;
+  @ViewChild('autosize', {static: false}) autosize: CdkTextareaAutosize;
 
   constructor(
     public dialogRef: MatDialogRef<ContactModalComponent>,

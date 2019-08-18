@@ -58,7 +58,7 @@ export class BrandBoxComponent implements OnInit {
   public isMobile: boolean = this.api.isMobileWatcher;
   public isInViewport: boolean;
 
-  @ViewChild('brandBoxContainer') box: any;
+  @ViewChild('brandBoxContainer', {static: false}) box: any;
 
   constructor(
     @Inject(DOCUMENT) private document: any,

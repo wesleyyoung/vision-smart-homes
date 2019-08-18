@@ -14,7 +14,7 @@
     app.use('/home', express.static(__dirname + '/dist/vision-smart-homes'));
     app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-    app.set('PORT', process.env.PORT || 80);
+    app.set('PORT', process.env.PORT || 8080);
 
     server.listen(app.get('PORT'), () => {
         console.log(`Listening on port ${app.get('PORT')}...`);

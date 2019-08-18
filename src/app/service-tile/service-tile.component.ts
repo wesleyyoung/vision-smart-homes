@@ -64,7 +64,7 @@ export class ServiceTileComponent implements OnInit {
   public mobileTrigger: number = 750;
   public isInViewport: boolean;
 
-  @ViewChild('serviceBoxContainer') boxes: any;
+  @ViewChild('serviceBoxContainer', {static: false}) boxes: any;
 
   constructor(
     @Inject(DOCUMENT) private document: any,
