@@ -41,6 +41,8 @@ import { ServicesComponent } from './services/services.component';
 import { CrestronComponent } from './crestron/crestron.component';
 import { Control4Component } from './control4/control4.component';
 import { FullServiceTileComponent } from './full-service-tile/full-service-tile.component';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { FullServiceTileComponent } from './full-service-tile/full-service-tile.
     ServicesComponent,
     CrestronComponent,
     Control4Component,
-    FullServiceTileComponent
+    FullServiceTileComponent,
+    SplashScreenComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

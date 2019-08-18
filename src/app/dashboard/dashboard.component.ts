@@ -27,6 +27,7 @@ import { Service } from '../service-tile/service-tile.component';
 import { FullServiceTile } from '../full-service-tile/full-service-tile.component';
 import { ContactModalComponent } from '../contact-modal/contact-modal.component';
 import { ApiService, PortfolioPic } from '../api.service';
+import { SplashService } from '../splash.service';
 
 
 @Component({
@@ -45,7 +46,8 @@ export class DashboardComponent implements OnInit {
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
     private dialog: MatDialog,
-    private api: ApiService
+    private api: ApiService,
+    private _splash: SplashService
     ) { 
       iconRegistry.addSvgIcon('tv', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/tv.svg'));
       iconRegistry.addSvgIcon('speaker', sanitizer.bypassSecurityTrustResourceUrl('assets/svg/speaker.svg'));
@@ -137,6 +139,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      this._splash.stopLoading();
+    }, 500);
     this.api.isMobile.subscribe(isMobile => {
       this.isMobile = isMobile;
     });

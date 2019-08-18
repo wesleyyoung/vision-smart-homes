@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import { SplashService } from './splash.service';
 
 export interface PortfolioPic {
   src: string;
@@ -27,7 +28,10 @@ export class ApiService {
   public isMediumWatcher: boolean = !this.isMobileWatcher && window.innerWidth <= this.mediumWidthTrigger;
   public isMedium = new Subject<boolean>();
 
-  constructor(@Inject(DOCUMENT) private document: any) {
+  constructor(
+    @Inject(DOCUMENT) private document: any,
+    private _splash: SplashService
+    ) {
     window.addEventListener('resize', ev => {
       this.isMobileWatcher = window.innerWidth <= this.mobileWidthTrigger || window.innerHeight <= this.mobileHeightTrigger;
       this.isMediumWatcher = !this.isMobileWatcher && window.innerWidth < this.mediumWidthTrigger;

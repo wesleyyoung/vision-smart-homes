@@ -1,4 +1,4 @@
-<mat-toolbar class="nav-bar" role="toolbar" *ngIf="showNav" [class.solid-nav-bar]="!atTop" [class.transparent]="atTop">
+<mat-toolbar class="nav-bar" role="toolbar" *ngIf="showNav" [hidden]="loading" [class.solid-nav-bar]="!atTop" [class.transparent]="atTop">
   <img src="../assets/vision-logo-e.png" style="height: 50px; width: 50px" routerLink="./home">
   <span style="flex: 1 1 auto;"></span>
   <button mat-button *ngIf="!isMobile" routerLink="./products">Products</button>
@@ -9,16 +9,6 @@
     <mat-icon aria-label="Menu">menu</mat-icon>
   </button>
 </mat-toolbar>
-<router-outlet></router-outlet>
-<div class="footer" layout="row" layout-xs="column" layout-padding="">
-  <div flex="">
-    <mat-card class="transparent">
-      <img class="footer-logo" src="../assets/vision-logo-full.png">
-      <mat-card-content>
-        <p class="soft-txt roboto-thin">435-674-9290</p>
-        <p class="soft-txt roboto-thin">sales@visionsmarthomes.com</p>
-        <p class="soft-txt roboto-thin">2051 E. Red Hills Pkwy, Suite 5 St. George, UT 84770</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>
+<app-splash-screen *ngIf="loading"></app-splash-screen>
+<router-outlet [hidden]="loading"></router-outlet>
+<app-footer *ngIf="!loading"></app-footer>
