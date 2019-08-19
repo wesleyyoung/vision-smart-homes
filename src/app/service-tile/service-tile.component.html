@@ -1,11 +1,14 @@
-<mat-grid-list cols="6" rowHeight="120px" gutterSize="5px" #serviceBoxContainer>
-  <mat-grid-tile [colspan]="colSpan" rowspan="2" *ngFor="let service of serviceList; let i = index;" style="overflow: visible !important;">
-    <div class="service-box" 
-    [@flyIn]="isInViewport ? 'on-page' : isMobile || i == 0 ? 'rest-left' : i == 1 ? 'rest-center' : i == 2 ? 'rest-right': 'rest-center'">
-      <mat-icon class="big-icon">{{service.icon}}</mat-icon>
-      <h3 class="headline-txt">{{service.headline}}</h3>
-      <div class="dash"></div>
-      <h4 class="tagline-txt">{{service.tagline}}</h4>
+<mat-grid-list cols="3" rowHeight="220px" gutterSize="5px" #serviceBoxContainer>
+  <mat-grid-tile *ngFor="let service of serviceList; let i = index;" [colspan]="isMobile ? 3 : service.colSpan" [rowspan]="isMobile ? 1 : service.rowSpan"
+    style="overflow: visible !important;">
+    <div class="service-box"
+      [@flyIn]="isInViewport ? 'on-page' : isMobile || i == 0 ? 'rest-left' : i == 1 ? 'rest-center' : i == 2 ? 'rest-right': 'rest-center'">
+      <mat-card class="transparent service-card" [ngStyle]="{'background-image': 'url(' + service.bg + ')'}">
+        <mat-card-header>
+          <mat-card-title class="padding-right-md">{{service.headline}}</mat-card-title>
+          <mat-card-subtitle class="padding-right-md">{{service.tagline}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
     </div>
   </mat-grid-tile>
 </mat-grid-list>

@@ -22,7 +22,10 @@ import { ApiService } from '../api.service';
 export interface Service {
   headline: string;
   tagline: string;
-  icon: string
+  icon: string,
+  bg: string,
+  colSpan: number,
+  rowSpan: number
 }
 
 @Component({

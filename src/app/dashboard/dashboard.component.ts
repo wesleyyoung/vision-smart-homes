@@ -85,31 +85,54 @@ export class DashboardComponent implements OnInit {
   ];
 
   public ourServices1: Array<Service> = [{
-    headline: 'TV',
+    headline: 'Professional TV Installation',
     tagline: 'No cables. No clutter. Just entertainment',
-    icon: 'tv'
+    icon: 'tv',
+    bg: '../assets/stock_img/tv-service.webp',
+    colSpan: 2,
+    rowSpan: 1
   }, {
     headline: 'Wi-Fi',
     tagline: 'Business class wireless networks',
-    icon: 'wifi'
+    icon: 'wifi',
+    bg: '../assets/stock_img/laptop-service.webp',
+    colSpan: 1,
+    rowSpan: 2
   }, {
     headline: 'Whole Home Audio',
     tagline: 'Hand-written apologies for your neighbors',
-    icon: 'speaker'
-  }];
-
-  public ourServices2: Array<Service> = [{
-    headline: 'Security',
-    tagline: 'Cameras, doorlocks, and automated alarm systems',
-    icon: 'security'
+    icon: 'speaker',
+    bg: '../assets/stock_img/studio.webp',
+    colSpan: 1,
+    rowSpan: 1
   }, {
-    headline: 'Shades',
+    headline: 'Personalized Security',
+    tagline: 'Cameras, doorlocks, and automated alarm systems',
+    icon: 'security',
+    bg: '../assets/stock_img/doorlock.webp',
+    colSpan: 1,
+    rowSpan: 2
+  }, {
+    headline: 'Automated Lighting',
+    tagline: '',
+    icon: 'web_asset',
+    bg: '../assets/stock_img/bulb.webp',
+    colSpan: 1,
+    rowSpan: 2
+  }, {
+    headline: 'Motorized Shades',
     tagline: 'Bring your home to life with the touch of a button',
-    icon: 'web_asset'
+    icon: 'web_asset',
+    bg: '../assets/stock_img/shades.webp',
+    colSpan: 1,
+    rowSpan: 1
   }, {
     headline: 'Video Distribution',
     tagline: '4K video from anywhere in your home',
-    icon: '4k'
+    icon: '4k',
+    bg: '../assets/stock_img/tv-wall.webp',
+    colSpan: 2,
+    rowSpan: 1
   }];
 
   public fullServiceTile1: FullServiceTile = {
