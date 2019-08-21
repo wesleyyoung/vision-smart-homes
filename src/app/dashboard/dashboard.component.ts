@@ -114,14 +114,14 @@ export class DashboardComponent implements OnInit {
     rowSpan: 2
   }, {
     headline: 'Automated Lighting',
-    tagline: '',
+    tagline: 'Bring your home to life with the touch of a button',
     icon: 'web_asset',
     bg: '../assets/stock_img/bulb.webp',
     colSpan: 1,
     rowSpan: 2
   }, {
     headline: 'Motorized Shades',
-    tagline: 'Bring your home to life with the touch of a button',
+    tagline: 'Silent shade motors eliminate the hassle of manual drawstrings',
     icon: 'web_asset',
     bg: '../assets/stock_img/shades.webp',
     colSpan: 1,

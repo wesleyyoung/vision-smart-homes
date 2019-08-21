@@ -1,6 +1,6 @@
 <mat-grid-list cols="3" rowHeight="220px" gutterSize="5px" #serviceBoxContainer>
   <mat-grid-tile *ngFor="let service of serviceList; let i = index;" [colspan]="isMobile ? 3 : service.colSpan" [rowspan]="isMobile ? 1 : service.rowSpan"
-    style="overflow: visible !important;">
+    class="service-tile">
     <div class="service-box"
       [@flyIn]="isInViewport ? 'on-page' : isMobile || i == 0 ? 'rest-left' : i == 1 ? 'rest-center' : i == 2 ? 'rest-right': 'rest-center'">
       <mat-card class="transparent service-card" [ngStyle]="{'background-image': 'url(' + service.bg + ')'}">

@@ -98,10 +98,13 @@ body {
 
 ::-webkit-scrollbar {
   width: 0;
+  display: none !important;
+  position: absolute !important;
 }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  position: absolute !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -120,7 +123,7 @@ outline: 1px solid rgb(25, 25, 25);
   padding-top: 100px;
   display: inline-block;
   text-align: auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .content-strip {
